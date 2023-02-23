@@ -7,15 +7,21 @@ function Registration() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            await axios.post('http://localhost:8081/register', { username, password });
-            console.log('User registered successfully!');
-        } catch (error) {
-            console.error('Error registering user:', error);
-        }
+        axios.post('http://localhost:8081/register', {
+            username: username,
+            password: password
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     return (
+        <>
+        <h2>Register</h2>
         <form onSubmit={handleSubmit}>
             <label>
                 Username:
@@ -27,6 +33,7 @@ function Registration() {
             </label>
             <button type="submit">Register</button>
         </form>
+        </>
     );
 }
 

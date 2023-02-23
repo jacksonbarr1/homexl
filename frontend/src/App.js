@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Login from './Login.js'
+import Registration from "./Registration";
 
 function App() {
   return (
       <div>
         <h1>Welcome to HomeXL</h1>
-          <Login></Login>
+              <Registration></Registration>
       </div>
   );
 }
